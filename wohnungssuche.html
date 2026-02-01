@@ -1,6 +1,3 @@
-<!-- =========================
-     index.html
-========================== -->
 <!DOCTYPE html>
 <html lang="de">
 
@@ -28,6 +25,43 @@
 
 
 <body data-mode="housing">
+
+
+    <!-- =========================
+     Cookies 
+========================== -->
+
+    <div id="cookie-banner" style="
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  padding: 1rem 1.5rem;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  display: none;
+  z-index: 9999;
+  max-width: 90%;
+  font-family: Inter, system-ui, sans-serif;
+">
+        <p style="margin: 0 0 0.8rem 0; font-size: 0.9rem;">
+            Diese Website verwendet Cookies zur anonymisierten Besucherstatistik.
+        </p>
+        <div style="display: flex; gap: 0.5rem; justify-content: flex-end;">
+            <button onclick="acceptCookies()" style="
+      background: #2f5d50;
+      color: white;
+      border: none;
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      cursor: pointer;
+    ">
+                Akzeptieren
+            </button>
+        </div>
+    </div>
+
 
     <!-- =========================
      TOP BAR 
@@ -70,8 +104,6 @@
                 <p>
                     Ich bin Masterstudent und starte ab April 2026 meinen Master
                     in <strong>Management & Technology</strong> an der Technischen Universität München.
-                    Durch meine zweijährige Tätigkeit als Werkstudent im Projekteinkauf bei Vibracoustic
-                    arbeite ich strukturiert, zuverlässig und verantwortungsbewusst.
                     Ziel ist ein <strong>langfristiges, ruhiges Mietverhältnis</strong>, das mir erlaubt,
                     mich voll auf Studium und Werkstudium zu konzentrieren.
                 </p>
@@ -129,6 +161,12 @@
                         mit Wohnraum, Nachbarn und Eigentum ist für mich selbstverständlich.
                     </p>
                     <p>
+                        In den vergangenen zwei Jahren war ich als Werkstudent im operativen Projekteinkauf des
+                        deutschen Automobilzulieferers
+                        Vibracoustic tätig
+                        und plane, mein Werkstudium bei BMW fortzusetzen.
+                    </p>
+                    <p>
                         Als Nichtraucher und Nichttrinker führe ich einen ruhigen, fokussierten Alltag.
                         Eine universitätsnahe und ruhige Wohnungumgebung ist für mich wichtig, um mich voll auf
                         mein Studium an der TUM und perspektivisch auf mein Werkstudium konzentrieren zu können.
@@ -181,41 +219,96 @@
     </section>
 
     <!-- =========================
-        EIGNUNG
+     DOKUMENTE
 ========================== -->
-
-    <section class="section alt" id="eignung">
+    <section class="section" id="dokumente">
         <div class="container">
-            <h2>Warum ich ein guter Mieter bin</h2>
+            <h2>Dokumente & Nachweise</h2>
 
-            <div class="grid-3">
-                <div class="card">
-                    <h3>Zuverlässig & langfristig</h3>
-                    <p>
-                        Ich suche bewusst ein langfristiges Mietverhältnis und lege großen
-                        Wert auf Verlässlichkeit sowie eine transparente Kommunikation.
-                    </p>
+            <!-- PROFIL PDF -->
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span>Profil & PDF</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="doc-row">
+                        <span>Bewerbermappe</span>
+                        <a href="KY_Bewerbermappe_2602.pdf" class="download-btn" download
+                            onclick="trackDownload('Profil', 'Bewerbermappe')">
+                            Download
+                        </a>
+                    </div>
+
+                    <div class="doc-row">
+                        <span>Lebenslauf</span>
+                        <a href="Lebenslauf_KaanYuyucu_2602.pdf" class="download-btn" download
+                            onclick="trackDownload('Profil', 'Lebenslauf')">
+                            Download
+                        </a>
+                    </div>
+
+                    <div class="doc-row">
+                        <span>Anschreiben</span>
+                        <a href="KY_Anschreiben.pdf" class="download-btn" download
+                            onclick="trackDownload('Profil', 'Anschreiben')">
+                            Download
+                        </a>
+                    </div>
+
+                    <div class="doc-row">
+                        <span>Selbstauskunft</span>
+                        <a href="KY_Selbstauskunft.pdf" class="download-btn" download
+                            onclick="trackDownload('Profil', 'Selbstauskunft')">
+                            Download
+                        </a>
+                    </div>
                 </div>
+            </div>
 
-                <div class="card">
-                    <h3>Ruhiger Lebensstil</h3>
-                    <p>
-                        Als Nichtraucher und Nichttrinker führe ich einen ruhigen,
-                        strukturierten Alltag mit Fokus auf Studium und Arbeit.
-                    </p>
-                </div>
+            <!-- BONITÄT -->
+            <div class="accordion-item protected" data-password="4711">
+                <button class="accordion-header">
+                    <span>Finanzierung & Bonität</span>
+                    <span class="accordion-icon">🔒</span>
+                </button>
 
-                <div class="card">
-                    <h3>Sorgfältiger Umgang</h3>
-                    <p>
-                        Ein gepflegter Umgang mit Wohnraum, Inventar und gemeinschaftlichen
-                        Flächen ist für mich selbstverständlich.
-                    </p>
+                <div class="accordion-content">
+                    <div class="doc-row">
+                        <span>Bewerbermappe inkl. Gehaltsnachweise</span>
+                        <a href="KY_Bewerbermappe.pdf" class="download-btn" download
+                            onclick="trackDownload('Bonität', 'Bewerbermappe+Gehalt')">
+                            Download
+                        </a>
+                    </div>
+
+                    <div class="doc-row">
+                        <span>Gehaltsnachweis Dezember 25</span>
+                        <a href="entgeltnachweis-dezember-2025.pdf" class="download-btn" download
+                            onclick="trackDownload('Bonität', 'Gehalt Dezember 2025')">
+                            Download
+                        </a>
+                    </div>
+
+                    <div class="doc-row">
+                        <span>Gehaltsnachweis November 25</span>
+                        <a href="entgeltnachweis-november-2025.pdf" class="download-btn" download
+                            onclick="trackDownload('Bonität', 'Gehalt November 2025')">
+                            Download
+                        </a>
+                    </div>
+
+                    <div class="doc-row">
+                        <span>SCHUFA-Nachweis</span>
+                        <a href="checks-2-ROYKEVL7IOJJ6-2.pdf" class="download-btn" download
+                            onclick="trackDownload('Bonität', 'SCHUFA')">
+                            Download
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
 
     <!-- =========================
         LEBENSLAUF 
@@ -268,89 +361,40 @@
         </div>
     </section>
 
-
     <!-- =========================
-     DOKUMENTE
+        EIGNUNG
 ========================== -->
-    <section class="section" id="dokumente">
+
+    <section class="section alt" id="eignung">
         <div class="container">
-            <h2>Dokumente & Nachweise</h2>
+            <h2>Warum ich ein guter Mieter bin</h2>
 
-            <!--PROFIL PDF-->
-            <div class="accordion-item">
-                <button class="accordion-header">
-                    <span>Profil & PDF</span>
-                    <span class="accordion-icon">+</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="doc-row">
-                        <span>Bewerbermappe</span>
-                        <a href="KY_Bewerbermappe_2602.pdf" class="download-btn" download>Download</a>
-                    </div>
-                    <div class="doc-row">
-                        <span>Lebenslauf</span>
-                        <a href="Lebenslauf_KaanYuyucu_2602.pdf" class="download-btn" download>Download</a>
-                    </div>
-                    <div class="doc-row">
-                        <span>Anschreiben</span>
-                        <a href="KY_Anschreiben.pdf" class="download-btn" download>Download</a>
-                    </div>
-                    <div class="doc-row">
-                        <span>Selbstauskunft</span>
-                        <a href="KY_Selbstauskunft.pdf" class="download-btn" download>Download</a>
-                    </div>
+            <div class="grid-3">
+                <div class="card">
+                    <h3>Zuverlässig & langfristig</h3>
+                    <p>
+                        Ich suche bewusst ein langfristiges Mietverhältnis und lege großen
+                        Wert auf Verlässlichkeit sowie eine transparente Kommunikation.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Ruhiger Lebensstil</h3>
+                    <p>
+                        Als Nichtraucher und Nichttrinker führe ich einen ruhigen,
+                        strukturierten Alltag mit Fokus auf Studium und Arbeit.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Sorgfältiger Umgang</h3>
+                    <p>
+                        Ein gepflegter Umgang mit Wohnraum, Inventar und gemeinschaftlichen
+                        Flächen ist für mich selbstverständlich.
+                    </p>
                 </div>
             </div>
-
-            <!--BONITÄT-->
-            <div class="accordion-item protected" data-password="4711">
-                <button class="accordion-header">
-                    <span>Finanzierung & Bonität</span>
-                    <span class="accordion-icon">🔒</span>
-                </button>
-
-                <div class="accordion-content">
-                    <div class="doc-row">
-                        <span>Bewerbermappe inkl. Gehaltsnachweise</span>
-                        <a href="KY_Bewerbermappe.pdf" class="download-btn" download>Download</a>
-                    </div>
-                    <!--<div class="doc-row">
-                        <span>Gehaltsnachweis Januar 26</span>
-                        <a href="entgeltnachweis-dezember-2025.pdf" class="download-btn" download>Download</a>
-                    </div>-->
-                    <div class="doc-row">
-                        <span>Gehaltsnachweis Dezember 25</span>
-                        <a href="entgeltnachweis-dezember-2025.pdf" class="download-btn" download>Download</a>
-                    </div>
-                    <div class="doc-row">
-                        <span>Gehaltsnachweis November 25</span>
-                        <a href="entgeltnachweis-november-2025.pdf" class="download-btn" download>Download</a>
-                    </div>
-                    <div class="doc-row">
-                        <span>SCHUFA-Nachweis</span>
-                        <a href="checks-2-ROYKEVL7IOJJ6-2.pdf" class="download-btn" download>Download</a>
-                    </div>
-                </div>
-            </div>
-
-            <!--Nachweise
-            <div class="accordion-item">
-                <button class="accordion-header">
-                    <span>Nachweise</span>
-                    <span class="accordion-icon">+</span>
-                </button>
-                <div class="accordion-content">
-                    <div class="doc-row">
-                        <span>Englisch-Zertifikat</span>
-                        <a href="assets/english.pdf" class="download-btn" download>Download</a>
-                    </div>
-                    <div class="doc-row">
-                        <span>Wettbewerbsauszeichnungen</span>
-                        <a href="assets/awards.pdf" class="download-btn" download>Download</a>
-                    </div>
-                </div>
-            </div>
-            -->
+        </div>
     </section>
 
 
@@ -525,17 +569,51 @@
         });
     </script>
 
-    <!--PASSWORTSCHUTZ
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2JMPMF1FJJ"></script>
     <script>
-        const password = "4711";
-        const userPass = prompt("Bitte Passwort eingeben:");
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-        if (userPass !== password) {
-            document.body.innerHTML = "<h1 style='text-align:center;margin-top:20vh;'>Zugriff verweigert</h1>";
+        // Analytics erst nach Cookie-Zustimmung aktivieren
+        function enableAnalytics() {
+            gtag('config', 'G-2JMPMF1FJJ', {
+                anonymize_ip: true,
+                send_page_view: true
+            });
+            localStorage.setItem('analytics_consent', 'true');
         }
     </script>
-    -->
+
+    <!-- COOKIES -->
+    <script>
+        function acceptCookies() {
+            document.getElementById('cookie-banner').style.display = 'none';
+            enableAnalytics();
+        }
+
+        window.addEventListener('load', function () {
+            if (localStorage.getItem('analytics_consent') === 'true') {
+                enableAnalytics();
+            } else {
+                document.getElementById('cookie-banner').style.display = 'block';
+            }
+        });
+    </script>
+
+    <!-- DOWNLOAD ANALYTICS -->
+    <script>
+        function trackDownload(category, label) {
+            if (typeof gtag === 'function' && localStorage.getItem('analytics_consent') === 'true') {
+                gtag('event', 'download', {
+                    event_category: category,
+                    event_label: label
+                });
+            }
+        }
+    </script>
 
 </body>
 
-</html>Ï
+</html>

@@ -428,6 +428,17 @@ body {
     border-collapse: collapse;
 }
 
+.card table td:first-child {
+    padding-right: 2rem;
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+.card table td:last-child {
+    color: var(--muted);
+}
+
+
 .card td {
     padding: 0.6rem 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
@@ -759,7 +770,7 @@ body {
 #pw-modal {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
     display: none;
     align-items: center;
     justify-content: center;
